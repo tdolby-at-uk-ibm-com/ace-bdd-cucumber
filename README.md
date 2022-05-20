@@ -18,14 +18,12 @@ correct JUnit engine using a standard annotation of `@IncludeEngines("cucumber")
 which engine to use.
 
 The Cucumber feature description in [is_it_friday_yet.feature](FridayApplication_Test/src/main/resources/bdd/cucumber/is_it_friday_yet.feature) matches the
-tutorial, and is picked up the Cucmber engine automatically. 
+tutorial, and is picked up the Cucumber engine automatically. 
 The tests in [RunCucumberTest.java](FridayApplication_Test/src/main/java/bdd/cucumber/RunCucumberTest.java) use standard 
-JUnit and ACE testing constructus to implement the various steps, making sure the actual application code in 
+JUnit and ACE testing constructs to implement the various steps, making sure the actual application code in 
 [MainFlow_Compute.esql](FridayApplication/MainFlow_Compute.esql) works as expected.
 
-
 ![BDD overview](FridayApplication/bdd-overview.png)
-
 
 ## Next steps
 
