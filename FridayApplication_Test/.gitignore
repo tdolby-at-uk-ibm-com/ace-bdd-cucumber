@@ -1,1 +1,9 @@
 /target/
+*.bar
+*.jar
+/bdd-test-work-dir/
+/bin/
+/classes/
+/generated-sources/
+/maven-archiver/
+/maven-status/

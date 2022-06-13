@@ -11,31 +11,37 @@
       <systemPath>${MQSI_BASE_FILEPATH}/common/classes/IntegrationTest.jar</systemPath>
     </dependency>
 
-    <!-- These JARs should match the ACE install versions: the ACE-installed versions will be used at runtime  -->
+    <!-- These JARs should match the ACE install versions: the ACE-installed versions will be used at runtime.  -->
+    <!-- For this reason, the scope is set to "provided" instead of the usual "test".  -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
       <version>2.13.1</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>2.13.1</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-console-standalone</artifactId>
       <version>1.7.0</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-suite-api</artifactId>
       <version>1.7.0</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest-core</artifactId>
       <version>2.2</version>
+      <scope>provided</scope>
     </dependency>
   
     <!-- These versions work with the JUnit test JARs shipped with ACE v12.0.4.0 -->
@@ -57,6 +63,10 @@
   </dependencies>
 
   <build>
+    <!-- Match old JCN project defaults -->
+    <directory>.</directory>
+    <finalName>${project.artifactId}-maven</finalName>
+
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -65,6 +75,44 @@
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>false</overWriteSnapshots>
+              <overWriteIfNewer>true</overWriteIfNewer>
+              <excludeScope>provided</excludeScope>
+              <excludeGroupIds>org.junit.platform,junit,ACEv12</excludeGroupIds>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId><artifactId>exec-maven-plugin</artifactId><version>3.0.0</version>
+        <executions>      
+      	  <execution><id>create-work-dir</id>
+      	    <phase>pre-integration-test</phase>
+      	    <goals><goal>exec</goal></goals>
+      	    <configuration>
+      	      <executable>mqsicreateworkdir</executable>
+      	      <arguments>
+      		      <argument>bdd-test-work-dir</argument>
+    	        </arguments>
+    	      </configuration>
+       	  </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
