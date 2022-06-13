@@ -108,10 +108,41 @@
       	    <configuration>
       	      <executable>mqsicreateworkdir</executable>
       	      <arguments>
-      		      <argument>bdd-test-work-dir</argument>
+      		      <argument>c:\tmp\bdd-test-work-dir</argument>
     	        </arguments>
     	      </configuration>
        	  </execution>
+           <execution><id>populate-work-dir</id>
+            <phase>pre-integration-test</phase>
+            <goals><goal>exec</goal></goals>
+            <configuration>
+              <executable>ibmint</executable>
+              <arguments>
+                <argument>deploy</argument>
+                <argument>--input-path</argument>
+                <argument>..</argument>
+                <argument>--output-work-directory</argument>
+                <argument>c:\tmp\bdd-test-work-dir</argument>
+                <argument>--do-not-compile-java</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution><id>run-cucumber-test</id>
+            <phase>integration-test</phase>
+            <goals><goal>exec</goal></goals>
+            <configuration>
+              <executable>IntegrationServer</executable>
+              <arguments>
+                <argument>-w</argument>
+                <argument>c:\tmp\bdd-test-work-dir</argument>
+                <argument>--no-nodejs</argument>
+                <argument>--start-msgflows</argument>
+                <argument>false</argument>
+                <argument>--test-project</argument>
+                <argument>FridayApplication_Test</argument>
+              </arguments>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
     </plugins>
