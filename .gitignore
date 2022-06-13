@@ -3,8 +3,7 @@
 
 # Packaging
 .cask
-.bar
-.jar
+*.bar
 
 # Backup files
 *~
