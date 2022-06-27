@@ -44,6 +44,13 @@ public class WholeFlowWithMockedNodeApplication_RetrieveFXData_SetUpRequest_0001
 		// We use a blank body in this case, but could load a message assembly.
 		TestMessageAssembly inputMessageAssembly = new TestMessageAssembly();
 
+		// Add Local Environment to Message Assembly for HTTP; equivalent to
+		// 
+		// curl 'http://localhost:7800/retrieveFXData?from=GBP&to=USD'
+		// 
+		inputMessageAssembly.localEnvironmentPath("HTTP.Input.QueryString.from").setValue("GBP");
+		inputMessageAssembly.localEnvironmentPath("HTTP.Input.QueryString.to").setValue("USD");
+		
 		// Call the message flow node with the Message Assembly
 		nodeSpy.evaluate(inputMessageAssembly, true, "in");
 

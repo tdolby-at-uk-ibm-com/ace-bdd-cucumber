@@ -43,11 +43,21 @@ public class WholeFlowWithMockedNodeApplication_RetrieveFXData_0001_Test {
 	// Note that this could cause trouble if not cleaned up and multiple tests
 	// are run from the same class.
 	static TestMessageAssembly replyMessageAssembly;
+
+	// Declare a new TestMessageAssembly object for the message being sent into the node
+	static TestMessageAssembly inputMessageAssembly;
 	
 	// Set up for the blank body test by doing nothing
-	@Given("a blank body and no service")
-	public void a_blank_body_and_no_service() {
-		
+	@Given("a blank body and no service for USD to GBP")
+	public void a_blank_body_and_no_service_for_USD_to_GBP() throws TestException
+	{
+	    inputMessageAssembly = new TestMessageAssembly();
+		// Add Local Environment to Message Assembly for HTTP; equivalent to
+		// 
+		// curl 'http://localhost:7800/retrieveFXData?from=GBP&to=USD'
+		// 
+		inputMessageAssembly.localEnvironmentPath("HTTP.Input.QueryString.from").setValue("GBP");
+		inputMessageAssembly.localEnvironmentPath("HTTP.Input.QueryString.to").setValue("USD");
 	}
 
 
@@ -87,9 +97,6 @@ public class WholeFlowWithMockedNodeApplication_RetrieveFXData_0001_Test {
 
 		// Program the stub to return this dummy result instead of calling the service
 		serviceStub.onCall().propagatesMessage("in", "out", serviceResultMessageAssembly);
-		
-		// Declare a new TestMessageAssembly object for the message being sent into the node
-		TestMessageAssembly inputMessageAssembly = new TestMessageAssembly();
 		
 		// Configure the "in" terminal on the HTTP Reply node not to propagate.
 		// If we don't do this, then the reply node will throw exceptions when it  
