@@ -1,8 +1,9 @@
-package test;
+package test.bdd.withMock;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.suite.api.IncludeEngines;
 
 import com.ibm.integration.test.v1.NodeSpy;
 import com.ibm.integration.test.v1.NodeStub;
@@ -10,6 +11,10 @@ import com.ibm.integration.test.v1.SpyObjectReference;
 import com.ibm.integration.test.v1.TestMessageAssembly;
 import com.ibm.integration.test.v1.TestSetup;
 import com.ibm.integration.test.v1.exception.TestException;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 import static com.ibm.integration.test.v1.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -19,6 +24,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 import java.io.InputStream;
 import java.time.Instant;
 
+//Run the cucumber tests
+@IncludeEngines("cucumber")
 public class WholeFlowWithMockedNodeApplication_RetrieveFXData_0001_Test {
 
 	/*
@@ -31,10 +38,22 @@ public class WholeFlowWithMockedNodeApplication_RetrieveFXData_0001_Test {
 		// Ensure any mocks created by a test are cleared after the test runs 
 		TestSetup.restoreAllMocks();
 	}
+	
+	// This is used for the reply so we can perform checks in the "Then" method.
+	// Note that this could cause trouble if not cleaned up and multiple tests
+	// are run from the same class.
+	static TestMessageAssembly replyMessageAssembly;
+	
+	// Set up for the blank body test by doing nothing
+	@Given("a blank body and no service")
+	public void a_blank_body_and_no_service() {
+		
+	}
 
-	@Test
-	public void WholeFlowWithMockedNodeApplication_RetrieveFXData_SetUpRequest_TestCase_001() throws TestException {
 
+	@When("I ask if the results are correct")
+	public void i_ask_if_the_results_are_correct() throws TestException 
+	{
 		SpyObjectReference nodeToBeMockedRef = new SpyObjectReference().application("WholeFlowWithMockedNodeApplication")
 				.messageFlow("RetrieveFXData").node("HTTP Request");
 
@@ -85,8 +104,14 @@ public class WholeFlowWithMockedNodeApplication_RetrieveFXData_0001_Test {
 		
 		// Validate the results from the flow execution
         // We will now pick up the message that is propagated into the "HttpReply" node and validate it
-		TestMessageAssembly replyMessageAssembly = httpReplySpy.receivedMessageAssembly("in", 1);
+		replyMessageAssembly = httpReplySpy.receivedMessageAssembly("in", 1);
+	}
+	
 
+
+	@Then("the results should validate successfully")
+	public void the_results_should_validate_successfully() throws TestException 
+	{
 		TestMessageAssembly expectedMessageAssembly = new TestMessageAssembly();
 		try {
 			String messageAssemblyPath = "/RetrieveFXData_ExpectedReply.mxml";

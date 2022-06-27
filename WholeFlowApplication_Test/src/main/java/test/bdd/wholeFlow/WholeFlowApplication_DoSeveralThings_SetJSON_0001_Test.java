@@ -28,17 +28,15 @@ public class WholeFlowApplication_DoSeveralThings_SetJSON_0001_Test {
 	// are run from the same class.
 	static TestMessageAssembly replyMessageAssembly;
 	
-	// Set up for the Sunday test, using an MXML message file
+	// Set up for the blank body test, using an MXML message file
 	@Given("a blank body")
-	public void today_is_sunday() {
+	public void a_blank_body() {
 		messageAssemblyName = "EmptyInputMessage";
 	}
 
-	
-	
+	// We could change the test method name, but the annotation is what allows cucumber to find it.
 	@When("I ask if header and body are correct")
 	public void WholeFlowApplication_DoSeveralThings_SetJSON_TestCase_001() throws TestException {
-
 		
 		// Define the SpyObjectReference objects
 		SpyObjectReference httpInputObjRef = new SpyObjectReference().application("WholeFlowApplication")
@@ -84,8 +82,8 @@ public class WholeFlowApplication_DoSeveralThings_SetJSON_0001_Test {
 	
 	
 	
-	@Then("I should be told {string}")
-	public void i_should_be_told(String string) throws TestException 
+	@Then("the results should validate successfully")
+	public void the_results_should_validate_successfully() throws TestException 
 	{
 		TestMessageAssembly expectedMessageAssembly = new TestMessageAssembly();
 		try {
