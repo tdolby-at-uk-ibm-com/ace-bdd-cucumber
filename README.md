@@ -9,8 +9,9 @@ ACE test projects assume the use of JUnit, but can be told to run Cucumber tests
 correct JUnit engine using a standard annotation of `@IncludeEngines("cucumber")` to tell the runtime
 which engine to use.
 
-The Cucumber feature description in [is_it_friday_yet.feature](FridayApplication_Test/src/main/resources/bdd/cucumber/is_it_friday_yet.feature) matches the
-tutorial, and is picked up the Cucumber engine automatically. 
+For the [FridayApplication](FridayApplication/README.md), the Cucumber feature description in 
+[is_it_friday_yet.feature](FridayApplication_Test/src/main/resources/bdd/cucumber/is_it_friday_yet.feature) 
+matches the tutorial, and is picked up the Cucumber engine automatically. 
 The tests in [RunCucumberTest.java](FridayApplication_Test/src/main/java/bdd/cucumber/RunCucumberTest.java) use standard 
 JUnit and ACE testing constructs to implement the various steps, making sure the actual application code in 
 [MainFlow_Compute.esql](FridayApplication/MainFlow_Compute.esql) works as expected.
