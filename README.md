@@ -26,12 +26,12 @@ run the test projects. This should cause the cucumber BDD tests to run and pass 
 The projects are as follows:
 
 - The simplest application demo is [FridayApplication](FridayApplication/README.md), showing the use of Cucumber with a single node.
-- The BDD tests for FridayApplication are in [FridayApplication_Test](FridayApplication_Test/README.md)
+    - The BDD tests for FridayApplication are in [FridayApplication_Test](FridayApplication_Test/README.md)
 - BDD testing of a whole flow with multiple nodes is shown using the [WholeFlowApplication](WholeFlowApplication/README.md) project
-- The BDD tests for WholeFlowApplication are in [WholeFlowApplication_Test](WholeFlowApplication_Test/README.md)
+    - The BDD tests for WholeFlowApplication are in [WholeFlowApplication_Test](WholeFlowApplication_Test/README.md)
 - BDD testing with a service stubbed out is shown using the [WholeFlowWithMockedNodeApplication](WholeFlowWithMockedNodeApplication/README.md) project
-- The BDD tests with mocking of one node are in the [WholeFlowWithMockedNodeApplication_Test](WholeFlowWithMockedNodeApplication_Test/README.md) project
-- TDD testing of one node is also possible [WholeFlowWithMockedNodeApplication_TDD](WholeFlowWithMockedNodeApplication_TDD/README.md)
+    - The BDD tests with mocking of one node are in the [WholeFlowWithMockedNodeApplication_Test](WholeFlowWithMockedNodeApplication_Test/README.md) project
+    - TDD testing of one node is also possible [WholeFlowWithMockedNodeApplication_TDD](WholeFlowWithMockedNodeApplication_TDD/README.md)
 
 ## Next steps
 
