@@ -9,13 +9,13 @@
       <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="45,150" URLSpecifier="/testFlow">
         <translation xmi:type="utility:ConstantString" string="HTTP Input"/>
       </nodes>
-      <nodes xmi:type="ComIbmWSReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="772,151">
+      <nodes xmi:type="ComIbmWSReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="724,149">
         <translation xmi:type="utility:ConstantString" string="HTTP Reply"/>
       </nodes>
-      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="293,146" computeExpression="esql://routine/#DoSeveralThings_SetJSON.Main">
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="270,146" computeExpression="esql://routine/#DoSeveralThings_SetJSON.Main">
         <translation xmi:type="utility:ConstantString" string="SetJSON"/>
       </nodes>
-      <nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="527,147" httpReplyHeader="Modify">
+      <nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="496,146" httpReplyHeader="Modify">
         <translation xmi:type="utility:ConstantString" string="HTTP Header"/>
         <nameValue4ReplyHeader name="X-Test-Header" value="FlowData"/>
       </nodes>
