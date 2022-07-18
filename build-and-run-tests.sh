@@ -20,7 +20,7 @@ git clone https://github.com/tdolby-at-uk-ibm-com/ace-bdd-cucumber
 sed -i 's/<\/classpath>/        <classpathentry kind="lib" path="\/opt\/ace-12.0.5.0\/common\/classes\/IntegrationTest.jar"\/>\n        <classpathentry kind="lib" path="\/opt\/ace-12.0.5.0\/common\/classes\/hamcrest-2.2.jar"\/>\n<\/classpath>/g' /tmp/bdd/ace-bdd-cucumber/FridayApplication_Test/.classpath /tmp/bdd/ace-bdd-cucumber/WholeFlowApplication_Test/.classpath /tmp/bdd/ace-bdd-cucumber/WholeFlowWithMockedNodeApplication_TDD/.classpath /tmp/bdd/ace-bdd-cucumber/WholeFlowWithMockedNodeApplication_Test/.classpath
 
 echo ""
-echo "================ Building WholeFlowApplication tests"
+echo "================ Building FridayApplication tests"
 echo ""
 mqsicreatebar -data /tmp/bdd/ace-bdd-cucumber -b /tmp/bdd/FridayApplication-tests.bar -a FridayApplication_Test -p FridayApplication
 mqsicreatebar -data /tmp/bdd/ace-bdd-cucumber -b /tmp/bdd/FridayApplication.bar -a FridayApplication
