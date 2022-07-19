@@ -1,6 +1,5 @@
 package test.tdd;
 
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,8 +13,6 @@ import static com.ibm.integration.test.v1.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.emptyString;
 import static org.hamcrest.Matchers.equalTo;
-
-import java.io.InputStream;
 
 public class WholeFlowWithMockedNodeApplication_RetrieveFXData_SetUpRequest_0001_Test {
 

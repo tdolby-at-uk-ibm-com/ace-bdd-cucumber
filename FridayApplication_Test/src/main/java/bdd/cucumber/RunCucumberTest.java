@@ -8,8 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.InputStream;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
-import org.junit.platform.suite.api.IncludeEngines;
 
 import com.ibm.integration.test.v1.NodeSpy;
 import com.ibm.integration.test.v1.SpyObjectReference;
@@ -20,11 +18,7 @@ import com.ibm.integration.test.v1.exception.TestException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.junit.platform.engine.Cucumber;
-import sun.misc.Contended;
-
 // Run the cucumber tests
-@IncludeEngines("cucumber")
 public class RunCucumberTest 
 {
 	// Should probably be using message assemblies instead of strings . . .

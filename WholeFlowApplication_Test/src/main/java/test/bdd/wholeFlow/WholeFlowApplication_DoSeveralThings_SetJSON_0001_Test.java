@@ -5,8 +5,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.io.InputStream;
 
-import org.junit.platform.suite.api.IncludeEngines;
-
 import com.ibm.integration.test.v1.NodeSpy;
 import com.ibm.integration.test.v1.SpyObjectReference;
 import com.ibm.integration.test.v1.TestMessageAssembly;
@@ -17,7 +15,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 // Run the cucumber tests
-@IncludeEngines("cucumber")
+
 public class WholeFlowApplication_DoSeveralThings_SetJSON_0001_Test {
 
 	// This is used as one example, using an MXML message file

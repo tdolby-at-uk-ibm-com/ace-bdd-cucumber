@@ -1,10 +1,5 @@
 package test.bdd.withMock;
 
-import org.hamcrest.Matchers;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
-import org.junit.platform.suite.api.IncludeEngines;
-
 import com.ibm.integration.test.v1.NodeSpy;
 import com.ibm.integration.test.v1.NodeStub;
 import com.ibm.integration.test.v1.SpyObjectReference;
@@ -20,12 +15,12 @@ import static com.ibm.integration.test.v1.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.AfterEach;
 
 import java.io.InputStream;
 import java.time.Instant;
 
 //Run the cucumber tests
-@IncludeEngines("cucumber")
 public class WholeFlowWithMockedNodeApplication_RetrieveFXData_0001_Test {
 
 	/*
