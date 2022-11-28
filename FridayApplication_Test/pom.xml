@@ -48,17 +48,17 @@
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit</artifactId>
-      <version>7.0.0</version>
+      <version>7.9.0</version>
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>7.0.0</version>
+      <version>7.9.0</version>
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit-platform-engine</artifactId>
-      <version>7.0.0</version>
+      <version>7.9.0</version>
     </dependency>
   </dependencies>
 
