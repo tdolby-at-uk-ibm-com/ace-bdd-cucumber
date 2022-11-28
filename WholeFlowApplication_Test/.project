@@ -3,6 +3,7 @@
 	<name>WholeFlowApplication_Test</name>
 	<comment></comment>
 	<projects>
+		<project>CucumberJARs</project>
 		<project>WholeFlowApplication</project>
 	</projects>
 	<buildSpec>

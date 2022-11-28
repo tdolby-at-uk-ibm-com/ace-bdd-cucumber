@@ -3,6 +3,7 @@
 	<name>WholeFlowWithMockedNodeApplication_Test</name>
 	<comment></comment>
 	<projects>
+		<project>CucumberJARs</project>
 		<project>WholeFlowWithMockedNodeApplication</project>
 	</projects>
 	<buildSpec>

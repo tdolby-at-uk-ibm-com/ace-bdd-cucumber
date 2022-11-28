@@ -4,10 +4,10 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Integration Test Library"/>
-	<classpathentry kind="lib" path="cucumber-core-7.0.0.jar"/>
-	<classpathentry kind="lib" path="cucumber-gherkin-7.0.0.jar"/>
-	<classpathentry kind="lib" path="cucumber-gherkin-messages-7.0.0.jar"/>
-	<classpathentry kind="lib" path="cucumber-java-7.0.0.jar"/>
-	<classpathentry kind="lib" path="cucumber-junit-platform-engine-7.0.0.jar"/>
+	<classpathentry kind="lib" path="/CucumberJARs/cucumber-core-7.0.0.jar"/>
+	<classpathentry kind="lib" path="/CucumberJARs/cucumber-gherkin-7.0.0.jar"/>
+	<classpathentry kind="lib" path="/CucumberJARs/cucumber-gherkin-messages-7.0.0.jar"/>
+	<classpathentry kind="lib" path="/CucumberJARs/cucumber-java-7.0.0.jar"/>
+	<classpathentry kind="lib" path="/CucumberJARs/cucumber-junit-platform-engine-7.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
