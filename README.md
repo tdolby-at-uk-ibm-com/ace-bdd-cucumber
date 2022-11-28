@@ -30,7 +30,7 @@ JUnit and ACE testing constructs to implement the various steps, making sure the
 
 The Cucumber tests can be run from the toolkit (for true BDD) and also in a pipeline for ongoing verification. 
 Cucumber tests can be run alongside TDD tests using standard JUnit (as shown in one project in this repo). This
-repo has been tested with ACE 12.0.5 but should work with any v12 level; earlier releases such as ACE v11 do
+repo has been tested with ACE 12.0.7 but should work with any v12 level; earlier releases such as ACE v11 do
 not have the test support code.
 
 ### Toolkit
