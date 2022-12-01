@@ -75,8 +75,9 @@ This repo is configured to use an ACE devcontainer that can run the toolkit in a
 session; see https://github.com/trevor-dolby-at-ibm-com/ace-vnc-devcontainer for details on
 how to access the toolkit.
 
-There is also an ace-minimal container (run via the "New with options" menu) that will run only
-the command line (no toolkit) but should start in around 20 seconds.
+There is also an ace-minimal container (run via the "New with options" menu) that can only
+be used for vscode editing and running tests via the command line (no toolkit) but should 
+start in 20-40 seconds depending on region.
 
 ## Details
 
