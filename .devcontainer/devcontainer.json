@@ -1,5 +1,5 @@
 {
-    "name": "ace-demo-pipeline-devcontainer",
+    "name": "ace-bdd-cucumber-devcontainer",
     "image": "tdolby/experimental:ace-devcontainer-xvnc-12.0.7.0",
     "containerEnv": {
         "LICENSE": "accept"
