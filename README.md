@@ -75,6 +75,9 @@ This repo is configured to use an ACE devcontainer that can run the toolkit in a
 session; see https://github.com/trevor-dolby-at-ibm-com/ace-vnc-devcontainer for details on
 how to access the toolkit.
 
+There is also an ace-minimal container (run via the "New with options" menu) that will run only
+the command line (no toolkit) but should start in around 20 seconds.
+
 ## Details
 
 Some issues arise when running Cucumber in ACE v12:
