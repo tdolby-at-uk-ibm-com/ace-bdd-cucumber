@@ -63,7 +63,7 @@ Developers get sixty hours of container runtime for free (at the time of writing
 
 ![Codespaces launch](/.devcontainer/codespaces-launch.png)
 
-The container will start up once the image has been downloaded (usually 30-50 seconds)
+The container will start up once the image has been downloaded (usually 100-150 seconds)
 and vscode will start automatically. All of the usual ACE commands are present, servers
 can be started as usual, etc. Running
 ```
