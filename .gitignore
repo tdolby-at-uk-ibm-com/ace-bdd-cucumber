@@ -12,4 +12,5 @@
 
 *.class
 
-*.jar
+# Allow JAR files
+# *.jar

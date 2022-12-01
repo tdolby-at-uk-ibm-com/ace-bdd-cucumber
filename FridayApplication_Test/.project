@@ -3,7 +3,6 @@
 	<name>FridayApplication_Test</name>
 	<comment></comment>
 	<projects>
-		<project>CucumberJARs</project>
 		<project>FridayApplication</project>
 	</projects>
 	<buildSpec>
