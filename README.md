@@ -42,7 +42,7 @@ run the test projects. This should cause the cucumber BDD tests to run and pass 
 
 Clone this repo branch using git and run
 ```
-mvn verify
+mvn --no-transfer-progress verify
 ```
 to download dependencies, build the flows and tests, and then run the tests.
 
