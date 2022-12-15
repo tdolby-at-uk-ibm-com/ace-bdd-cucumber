@@ -46,6 +46,32 @@ mvn --no-transfer-progress verify
 ```
 to download dependencies, build the flows and tests, and then run the tests.
 
+### Codespaces (experimental)
+
+This repo can be run in a container via GitHub codespaces, which are a feature of GitHub that enables 
+container-based development with VisualStudio Code in a web browser. The container in which vscode
+runs is configurable, and this repo uses a container with ACE installed.
+
+Developers get sixty hours of container runtime for free (at the time of writing), and a codespace can be launched from the "Code" menu:
+
+![Codespaces launch](/.devcontainer/codespaces-launch.png)
+
+The container will start up once the image has been downloaded (usually 100-150 seconds)
+and vscode will start automatically. All of the usual ACE commands are present, servers
+can be started as usual, etc. Running
+```
+mvn --no-transfer-progress verify
+```
+in the terminal will build and run the various tests for the projects.
+
+This repo is configured to use an ACE devcontainer that can run the toolkit in a browser 
+session; see https://github.com/trevor-dolby-at-ibm-com/ace-vnc-devcontainer for details on
+how to access the toolkit.
+
+There is also an ace-minimal container (run via the "New with options" menu) that can only
+be used for vscode editing and running tests via the command line (no toolkit) but should 
+start in 20-40 seconds depending on region.
+
 ## Details
 
 Some issues arise when running Cucumber in ACE v12:
