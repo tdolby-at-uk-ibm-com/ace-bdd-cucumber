@@ -79,6 +79,26 @@ There is also an ace-minimal container (run via the "New with options" menu) tha
 be used for vscode editing and running tests via the command line (no toolkit) but should 
 start in 20-40 seconds depending on region.
 
+## Integration with pipeline reporting
+
+As well as the pass/fail aspect of test reporting, Cucumber can also generate output that 
+is compatible with pipeline tooling to record which tests have been run and also any console 
+output. The [Cucumber docs](https://cucumber.io/docs/cucumber/reporting) describe various
+plugins, and three have been tested in this repo: JSON, JUnit, and HTML. The `cucumber.plugin` 
+setting in junit-platform.properties specifies which plugins will be loaded and used, and 
+can contain multiple entries. For example,
+```
+cucumber.plugin=pretty,json:target/cucumber-reports/Cucumber.json,junit:target/cucumber-reports/Cucumber.xml,html:target/cucumber-reports/Cucumber.html
+```
+will cause Cucumber to generate colourised test results on the console and also create
+JSON, JUnit XML, and HTML output in the `target/cucumber-reports` directory. The paths 
+are relative to the working directory, and if the tests are run from the toolkit then
+the project may need to be "refreshed" before the files become visible in the Eclipse 
+navigator due to the files being created outside Eclipse.
+
+Commented-out settings are shown in the [FridayApplication_Test junit-platform.properties](FridayApplication_Test/src/main/resources/junit-platform.properties) 
+and can be enabled to show the various output formats.
+
 ## Details
 
 Some issues arise when running Cucumber in ACE v12:
