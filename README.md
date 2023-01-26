@@ -79,6 +79,14 @@ There is also an ace-minimal container (run via the "New with options" menu) tha
 be used for vscode editing and running tests via the command line (no toolkit) but should 
 start in 20-40 seconds depending on region.
 
+### OpenShift Dev Spaces (experimental)
+
+This repo can be run in a container via OpenShift Dev Spaces, which are a feature of OpenShift
+that enables container-based development with VisualStudio Code in a web browser. The container
+in which vscode runs is configurable, and this repo is configured to use an ACE devcontainer
+that can run the toolkit in a browser session; see https://github.com/trevor-dolby-at-ibm-com/ace-dev-spaces-container
+for details on how to build/run the container images and access the toolkit.
+
 ## Integration with pipeline reporting
 
 As well as the pass/fail aspect of test reporting, Cucumber can also generate output that 
