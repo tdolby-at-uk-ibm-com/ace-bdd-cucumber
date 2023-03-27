@@ -1,30 +1,27 @@
-apiVersion: 1.0.0
+schemaVersion: 2.2.0
 metadata:
   name: ace-bdd-cucumber
 projects:
   - name: ace-bdd-cucumber
-    source:
-      type: git
-      location: 'https://github.com/tdolby-at-uk-ibm-com/ace-bdd-cucumber'
+    git:
+      remotes:
+        origin: 'https://github.com/tdolby-at-uk-ibm-com/ace-bdd-cucumber'
+      checkoutFrom:
+        revision: main
 components:
-  - alias: ace-v12
-    type: dockerimage
-    image: 'tdolby/experimental:ace-dev-spaces-container-xvnc-12.0.7.0'
-    memoryLimit: 2048Mi
-    env:
-      - name: LICENSE
-        value: accept
-    endpoints:
-      - name: server
-        port: 7600
-        attributes:
-          discoverable: 'true'
-          public: 'true'
-          protocol: 'http'
-      - name: novnc
-        port: 6080
-        attributes:
-          discoverable: 'true'
-          public: 'true'
-          protocol: 'http'
-    mountSources: true
+  - name: ace-v12
+    container:
+      image: 'tdolby/experimental:ace-dev-spaces-container-xvnc-12.0.8.0'
+      memoryLimit: 2048Mi
+      cpuLimit: 1000m
+      env:
+        - name: LICENSE
+          value: accept
+      endpoints:
+        - name: server
+          targetPort: 7600
+          attributes:
+            discoverable: 'true'
+            public: 'true'
+            protocol: 'http'
+      mountSources: true
