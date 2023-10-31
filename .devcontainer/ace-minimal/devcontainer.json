@@ -1,5 +1,5 @@
 {
-    "name": "ace-bdd-cucumber-devcontainer",
+    "name": "ace-bdd-cucumber-minimal-devcontainer",
     "image": "tdolby/experimental:ace-minimal-devcontainer-12.0.10.0",
     "containerEnv": {
         "LICENSE": "accept"
