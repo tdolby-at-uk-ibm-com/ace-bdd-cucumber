@@ -16,7 +16,6 @@ echo "================ Building and running FridayApplication tests"
 echo ""
 mqsicreateworkdir /tmp/bdd/FridayApplication-work-dir
 ibmint deploy --input-path $PWD --output-work-directory /tmp/bdd/FridayApplication-work-dir --project FridayApplication --project FridayApplication_Test
-ibmint specify jre --version 11 --work-dir /tmp/bdd/FridayApplication-work-dir
 IntegrationServer -w /tmp/bdd/FridayApplication-work-dir --no-nodejs --start-msgflows no --test-project FridayApplication_Test
 
 echo ""
@@ -24,7 +23,6 @@ echo "================ Building and running WholeFlowApplication tests"
 echo ""
 mqsicreateworkdir /tmp/bdd/WholeFlowApplication-work-dir
 ibmint deploy --input-path $PWD --output-work-directory /tmp/bdd/WholeFlowApplication-work-dir --project WholeFlowApplication --project WholeFlowApplication_Test
-ibmint specify jre --version 11 --work-dir /tmp/bdd/WholeFlowApplication-work-dir
 IntegrationServer -w /tmp/bdd/WholeFlowApplication-work-dir --no-nodejs --start-msgflows no --test-project WholeFlowApplication_Test
 
 echo ""
@@ -33,7 +31,6 @@ echo ""
 # Could run a separate TDD test work directory if there was a danger of interference
 mqsicreateworkdir /tmp/bdd/WholeFlowWithMockedNodeApplication-work-dir
 ibmint deploy --input-path $PWD --output-work-directory /tmp/bdd/WholeFlowWithMockedNodeApplication-work-dir --project WholeFlowWithMockedNodeApplication --project WholeFlowWithMockedNodeApplication_Test --project WholeFlowWithMockedNodeApplication_TDD
-ibmint specify jre --version 11 --work-dir /tmp/bdd/WholeFlowWithMockedNodeApplication-work-dir
 IntegrationServer -w /tmp/bdd/WholeFlowWithMockedNodeApplication-work-dir --no-nodejs --start-msgflows no --test-project WholeFlowWithMockedNodeApplication_TDD
 IntegrationServer -w /tmp/bdd/WholeFlowWithMockedNodeApplication-work-dir --no-nodejs --start-msgflows no --test-project WholeFlowWithMockedNodeApplication_Test
 
